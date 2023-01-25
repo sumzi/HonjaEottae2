@@ -14,7 +14,12 @@ const global = ({ colors, sizes }: Theme) => css`
   }
 
   body {
-    background: ${colors.GRAY_000};
+    margin: 0;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
   }
 `;
 
