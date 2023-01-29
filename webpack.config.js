@@ -1,21 +1,22 @@
-const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
 
-const isDevelopment = process.env.NODE_ENV !== "production";
+const isDevelopment = process.env.NODE_ENV !== 'production';
 
 module.exports = {
-  mode: isDevelopment ? "development" : "production",
-  entry: "./src/index.tsx",
+  mode: isDevelopment ? 'development' : 'production',
+  entry: './src/index.tsx',
   output: {
-    publicPath: "/",
-    filename: "bundle.js",
-    path: path.resolve(__dirname, "dist"),
+    publicPath: '/',
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, 'dist'),
     clean: true,
   },
   resolve: {
-    extensions: [".js", ".jsx", ".ts", ".tsx"],
+    extensions: ['.js', '.jsx', '.ts', '.tsx'],
     alias: {
-      "@": path.resolve(__dirname, "./src/"),
+      '@': path.resolve(__dirname, './src/'),
     },
   },
   devServer: {
@@ -24,15 +25,15 @@ module.exports = {
     hot: true,
     historyApiFallback: true,
   },
-  devtool: isDevelopment ? "eval-source-map" : "source-map",
+  devtool: isDevelopment ? 'eval-source-map' : 'source-map',
   module: {
     rules: [
       {
         test: /\.(ts|tsx)$/,
         use: {
-          loader: "ts-loader",
+          loader: 'ts-loader',
           options: {
-            configFile: path.resolve(__dirname, "tsconfig.json"),
+            configFile: path.resolve(__dirname, 'tsconfig.json'),
           },
         },
         exclude: /node_modules/,
@@ -40,8 +41,9 @@ module.exports = {
     ],
   },
   plugins: [
+    new Dotenv(),
     new HtmlWebpackPlugin({
-      template: "public/index.html",
+      template: 'public/index.html',
     }),
   ],
 };
