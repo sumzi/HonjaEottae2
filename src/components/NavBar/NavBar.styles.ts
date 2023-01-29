@@ -6,26 +6,28 @@ const navbar = ({ colors, flex }: Theme) => css`
 
   width: 100%;
   height: 14rem;
-  background: ${colors.PRIMARY};
+  border-bottom: 1px solid ${colors.GRAY_100};
+  padding: 0 20rem;
 `;
 
 const logo = ({ colors }: Theme) => css`
-  margin: 0 5rem;
-  color: ${colors.WHITE};
+  color: ${colors.PRIMARY};
   font-size: 5rem;
   font-weight: 600;
 `;
 
 const menus = css`
-  margin: 0 5rem;
   list-style-type: none;
 `;
 
 const menu = ({ colors }: Theme) => css`
   float: left;
-  margin: 0 2rem;
-  color: ${colors.WHITE};
-  font-size: 3.5rem;
+  margin: 0 5rem;
+  font-size: 3.6rem;
+  color: ${colors.GRAY_400};
+  &:hover {
+    color: ${colors.GRAY_800};
+  }
 `;
 
 export { navbar, logo, menus, menu };
