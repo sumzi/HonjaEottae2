@@ -9,7 +9,7 @@ module.exports = {
   entry: './src/index.tsx',
   output: {
     publicPath: '/',
-    filename: 'bundle.js',
+    filename: 'bundle.[hash].js',
     path: path.resolve(__dirname, 'dist'),
     clean: true,
   },
@@ -37,6 +37,15 @@ module.exports = {
           },
         },
         exclude: /node_modules/,
+      },
+      {
+        test: /\.(png|jp(e*)g|gif)$/,
+        use: {
+          loader: 'file-loader',
+          options: {
+            name: 'images/[name].[contenthash].[ext]',
+          },
+        },
       },
     ],
   },
