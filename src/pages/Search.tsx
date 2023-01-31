@@ -1,14 +1,14 @@
 import Layout from '@/components/common/Layout/Layout';
 import KeywordForm from '@/components/Search/KeywordForm/KeywordForm';
-import ImageMenu from '@/components/Main/ImageMenu/ImageMenu';
+import SearchList from '@/components/Search/SearchList/SearchList';
 
-function Main() {
+function Search() {
   return (
     <Layout>
       <KeywordForm />
-      <ImageMenu />
+      <SearchList />
     </Layout>
   );
 }
 
-export default Main;
+export default Search;
