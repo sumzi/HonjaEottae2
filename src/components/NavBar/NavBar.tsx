@@ -1,14 +1,18 @@
 import { Link } from 'react-router-dom';
 import * as styles from './NavBar.styles';
 import PATH from '@/constants/path';
+import KeywordForm from '../Search/KeywordForm/KeywordForm';
 
 function NavBar() {
   return (
     <nav css={styles.navbar}>
-      <div css={styles.logo}>
-        <Link to={PATH.MAIN.URL}>{PATH.MAIN.NAME}</Link>
+      <div css={styles.wrapper}>
+        <div css={styles.logo}>
+          <Link to={PATH.MAIN.URL}>{PATH.MAIN.NAME}</Link>
+        </div>
+        <KeywordForm />
       </div>
-      <ul css={styles.menus}>
+      <ul css={styles.menus_full}>
         <li css={styles.menu}>
           <Link to={PATH.AREA.URL}>{PATH.AREA.NAME}</Link>
         </li>
@@ -19,6 +23,7 @@ function NavBar() {
           <Link to={PATH.COURSE.URL}>{PATH.COURSE.NAME}</Link>
         </li>
       </ul>
+      <div css={[styles.menu, styles.menus_small]}>menu</div>
     </nav>
   );
 }
