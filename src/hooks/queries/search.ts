@@ -11,32 +11,36 @@ interface SearchKeywordResponse {
 }
 
 const useSearchKeyword = (keyword: string) => {
-  return useQuery([queryKey.KEYWORD], () => searchApi.searchKeyword(keyword), {
-    retry: 0,
-    enabled: !!keyword,
-    select: (data: AxiosResponse) => {
-      const result = data.data.response.body;
-      const items = result.items.item.map(
-        ({
-          contentid,
-          contenttypeid,
-          firstimage,
-          title,
-        }: SearchKeywordResponse) => {
-          return {
-            contentId: contentid,
-            contentTypeId: contenttypeid,
-            image: firstimage,
-            title: title,
-          };
-        },
-      );
-      return {
-        totalCount: result.totalCount,
-        items,
-      };
+  return useQuery(
+    [queryKey.KEYWORD, keyword],
+    () => searchApi.searchKeyword(keyword),
+    {
+      retry: 0,
+      enabled: !!keyword,
+      select: (data: AxiosResponse) => {
+        const result = data.data.response.body;
+        const items = result.items.item.map(
+          ({
+            contentid,
+            contenttypeid,
+            firstimage,
+            title,
+          }: SearchKeywordResponse) => {
+            return {
+              contentId: contentid,
+              contentTypeId: contenttypeid,
+              image: firstimage,
+              title: title,
+            };
+          },
+        );
+        return {
+          totalCount: result.totalCount,
+          items,
+        };
+      },
     },
-  });
+  );
 };
 
 export default useSearchKeyword;
