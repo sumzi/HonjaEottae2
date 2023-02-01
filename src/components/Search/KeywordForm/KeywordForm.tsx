@@ -1,33 +1,23 @@
-import { useCallback } from 'react';
-import Button from '@/components/common/Button/Button';
-import useInput from '@/hooks/useInput';
-import { useNavigate } from 'react-router-dom';
+import useFormKeyword from '@/hooks/useFormKeyword';
 import * as styles from './KeywordForm.styles';
+import SearchIcon from '@/assets/icons/search.svg';
 
 function KeywordForm() {
-  const navigate = useNavigate();
-  const [value, handleChange] = useInput('');
-
-  const handleSubmit = useCallback(
-    (e: React.FormEvent<HTMLFormElement>) => {
-      e.preventDefault();
-      if (value === '') return;
-      navigate(`/search/${value}`);
-    },
-    [value],
-  );
+  const [value, handleChange, handleSubmit] = useFormKeyword('');
 
   return (
-    <div css={styles.wrapper}>
-      <form onSubmit={handleSubmit}>
-        <input
-          css={styles.input}
-          placeholder="검색어를 입력해주세요."
-          onChange={handleChange}
-        />
-        <Button>검색</Button>
-      </form>
-    </div>
+    <form css={styles.form} onSubmit={handleSubmit}>
+      <input
+        css={styles.input}
+        placeholder="검색어를 입력해주세요."
+        maxLength={12}
+        onChange={handleChange}
+        value={value}
+      />
+      <button type="submit" css={styles.button}>
+        <SearchIcon />
+      </button>
+    </form>
   );
 }
 

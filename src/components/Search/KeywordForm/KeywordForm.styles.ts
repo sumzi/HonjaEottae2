@@ -1,26 +1,31 @@
 import { css, Theme } from '@emotion/react';
 
-const input = ({ colors, sizes }: Theme) => css`
-  margin-right: 2rem;
-  padding: 3rem 5rem;
-  width: 100rem;
+const form = css`
+  margin-left: 3rem;
+  position: relative;
+`;
+
+const input = ({ colors }: Theme) => css`
+  padding: 4rem;
+  width: 60rem;
+  background: ${colors.GRAY_000};
   outline: none;
-  border: 1px solid ${colors.GRAY_100};
-  border-radius: 5px;
-  font-size: 4rem;
-
-  ${sizes.mobile} {
-    width: 70%;
-  }
-
-  &:focus {
-    border: 1px solid ${colors.PRIMARY};
-  }
+  border: none;
+  border-radius: 6rem;
 `;
 
-const wrapper = css`
-  padding: 4rem 0;
-  text-align: center;
+const button = ({ colors }: Theme) => css`
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  right: 2.5rem;
+  height: 9rem;
+  width: 9rem;
+  background: ${colors.PRIMARY};
+  border-radius: 50%;
+  border: none;
+  padding: 2rem;
+  transform: translateY(-50%);
 `;
 
-export { wrapper, input };
+export { form, input, button };
