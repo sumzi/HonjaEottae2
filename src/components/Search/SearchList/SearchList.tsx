@@ -9,11 +9,7 @@ interface SearchListProps {
 }
 
 function SearchList({ keyword }: SearchListProps) {
-  const { data, refetch } = useSearchKeyword(keyword);
-
-  useEffect(() => {
-    refetch();
-  }, [keyword]);
+  const { data } = useSearchKeyword(keyword);
 
   return (
     <>
