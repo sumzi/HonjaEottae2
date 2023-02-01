@@ -1,12 +1,14 @@
 import { useEffect } from 'react';
-import { useParams } from 'react-router-dom';
 import Card from '@/components/common/Card/Card';
 import useSearchKeyword from '@/hooks/queries/search';
 import { SearchKeywordItemType } from '@/types/search';
 import * as styles from './SearchList.styles';
 
-function SearchList() {
-  const { keyword } = useParams();
+interface SearchListProps {
+  keyword: string;
+}
+
+function SearchList({ keyword }: SearchListProps) {
   const { data, refetch } = useSearchKeyword(keyword);
 
   useEffect(() => {
