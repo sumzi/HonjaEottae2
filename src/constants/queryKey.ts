@@ -1,4 +1,4 @@
-const queryKey = {
+const QUERY_KEY = {
   KEYWORD: 'keyword',
   AREA: 'area',
   COURSE: 'course',
@@ -10,4 +10,4 @@ const queryKey = {
   },
 };
 
-export default queryKey;
+export default QUERY_KEY;

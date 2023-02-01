@@ -10,7 +10,7 @@ interface SearchKeywordResponse {
   title: string;
 }
 
-const useSearchKeyword = (keyword?: string) => {
+const useSearchKeyword = (keyword: string) => {
   return useQuery([queryKey.KEYWORD], () => searchApi.searchKeyword(keyword), {
     retry: 0,
     enabled: !!keyword,
