@@ -9,7 +9,15 @@ import theme from '@/styles/theme';
 
 const rootNode = document.getElementById('root') as Element;
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: Infinity,
+      refetchOnWindowFocus: false,
+      retry: false,
+    },
+  },
+});
 
 ReactDOM.createRoot(rootNode).render(
   <React.StrictMode>
