@@ -1,22 +1,14 @@
 import searchApi from '@/apis/search';
-import queryKey from '@/constants/queryKey';
+import QUERY_KEY from '@/constants/queryKey';
+import { SearchKeywordResponse } from '@/types/search';
 import { useQuery } from '@tanstack/react-query';
 import { AxiosResponse } from 'axios';
 
-interface SearchKeywordResponse {
-  contentid: string;
-  contenttypeid: string;
-  firstimage: string;
-  title: string;
-}
-
 const useSearchKeyword = (keyword: string) => {
   return useQuery(
-    [queryKey.KEYWORD, keyword],
-    () => searchApi.searchKeyword(keyword),
+    [QUERY_KEY.KEYWORD, keyword],
+    () => searchApi.getSearchKeyword(keyword),
     {
-      retry: 0,
-      enabled: !!keyword,
       select: (data: AxiosResponse) => {
         const result = data.data.response.body;
         const items = result.items.item.map(
@@ -25,8 +17,10 @@ const useSearchKeyword = (keyword: string) => {
             contenttypeid,
             firstimage,
             title,
+            cat1,
           }: SearchKeywordResponse) => {
             return {
+              cat1: cat1,
               contentId: contentid,
               contentTypeId: contenttypeid,
               image: firstimage,

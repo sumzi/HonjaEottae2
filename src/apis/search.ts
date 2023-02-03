@@ -1,7 +1,7 @@
 import client from './index';
 
 const searchApi = {
-  searchKeyword: (keyword: string) => {
+  getSearchKeyword: (keyword: string) => {
     return client.get(`/searchKeyword?serviceKey=${process.env.SERVICE_KEY}`, {
       params: { keyword, numOfRows: 12 },
     });
