@@ -30,23 +30,25 @@ const logo = css`
 
 const menus_full = ({ flex, sizes }: Theme) => css`
   ${flex.row}
-  justify-content: space-between;
-  list-style-type: none;
-  padding: 0;
   ${sizes.tablet} {
     display: none;
   }
+  & > li {
+    margin-left: 10rem;
+  }
+  justify-content: space-between;
+  list-style-type: none;
+  padding: 0;
 `;
 
 const menus_small = ({ sizes }: Theme) => css`
-  display: none;
   ${sizes.tablet} {
     display: block;
   }
+  display: none;
 `;
 
 const menu = ({ colors }: Theme) => css`
-  margin-left: 10rem;
   font-size: 4rem;
   color: ${colors.GRAY_400};
   &:hover {
