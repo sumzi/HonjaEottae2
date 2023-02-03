@@ -57,6 +57,9 @@ module.exports = {
     new Dotenv(),
     new HtmlWebpackPlugin({
       template: 'public/index.html',
+      templateParameters: {
+        KAKAO_APP_KEY: process.env.KAKAO_APP_KEY,
+      },
     }),
   ],
 };
