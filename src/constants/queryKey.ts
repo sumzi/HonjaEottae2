@@ -1,6 +1,9 @@
 const QUERY_KEY = {
   KEYWORD: 'keyword',
-  AREA: 'area',
+  AREA: {
+    CODE: 'code',
+    LIST: 'areaList',
+  },
   COURSE: 'course',
   DETAIL: {
     COMMON: 'common',
