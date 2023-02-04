@@ -1,9 +1,7 @@
 import { css, Theme } from '@emotion/react';
 
-const header = ({ flex }: Theme) => css`
-  ${flex.column}
-  position:relative;
-  padding: 10rem;
+const header = css`
+  position: relative;
 `;
 
 const icon = ({ colors }: Theme) => css`
@@ -18,16 +16,6 @@ const icon = ({ colors }: Theme) => css`
   &:hover {
     fill: ${colors.SECONDARY};
   }
-`;
-
-const title = css`
-  font-size: 6.5rem;
-  margin-bottom: 2rem;
-`;
-
-const address = ({ colors }: Theme) => css`
-  font-size: 3rem;
-  color: ${colors.GRAY_500};
 `;
 
 const layout = ({ sizes }: Theme) => css`
@@ -56,4 +44,4 @@ const overview = ({ colors }: Theme) => css`
   color: ${colors.GRAY_800};
 `;
 
-export { header, icon, title, address, layout, image, overview };
+export { header, icon, layout, image, overview };
