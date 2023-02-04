@@ -1,5 +1,5 @@
 import { useSearchParams } from 'react-router-dom';
-import Layout from '@/components/common/Layout/Layout';
+import Layout from '@/components/@common/Layout/Layout';
 import SearchList from '@/components/Search/SearchList/SearchList';
 
 function Search() {

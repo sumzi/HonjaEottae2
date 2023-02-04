@@ -3,7 +3,6 @@ import path_area from '@/assets/images/path_area.png';
 import path_location from '@/assets/images/path_location.png';
 import path_course from '@/assets/images/path_course.png';
 import PATH from '@/constants/path';
-
 import * as styles from './ImageMenu.styles';
 
 function ImageMenu() {

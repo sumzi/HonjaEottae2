@@ -1,4 +1,4 @@
-import Layout from '@/components/common/Layout/Layout';
+import Layout from '@/components/@common/Layout/Layout';
 import ImageMenu from '@/components/Main/ImageMenu/ImageMenu';
 
 function Main() {

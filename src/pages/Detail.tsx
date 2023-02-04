@@ -1,5 +1,5 @@
 import { useSearchParams } from 'react-router-dom';
-import Layout from '@/components/common/Layout/Layout';
+import Layout from '@/components/@common/Layout/Layout';
 import DetailCommon from '@/components/Detail/DetailCommon/DetailCommon';
 import DetailIntro from '@/components/Detail/DetailIntro/DetailIntro';
 import DetailImage from '@/components/Detail/DetailImage/DetailImage';

@@ -5,7 +5,8 @@ import * as styles from './DetailCommon.styles';
 import DetailMap from '../DetailMap/DetailMap';
 import no_image from '@/assets/images/no_image_small.jpg';
 import { useNavigate } from 'react-router-dom';
-import Content from '@/components/common/Content/Content';
+import Content from '@/components/@common/Content/Content';
+import Title from '@/components/@common/Title/Title';
 
 function DetailCommon({ contentId, contentTypeId }: DetailType) {
   const navigate = useNavigate();
@@ -16,11 +17,13 @@ function DetailCommon({ contentId, contentTypeId }: DetailType) {
       {data && (
         <>
           <header css={styles.header}>
-            <div css={styles.icon} onClick={() => navigate(-1)}>
-              <ArrowLeftIcon />
-            </div>
-            <h1 css={styles.title}>{data.title}</h1>
-            <p css={styles.address}>{data.address}</p>
+            <Title>
+              <div css={styles.icon} onClick={() => navigate(-1)}>
+                <ArrowLeftIcon />
+              </div>
+              <h1>{data.title}</h1>
+              <p>{data.address}</p>
+            </Title>
           </header>
           <section>
             {data.cat1 !== 'C01' && (

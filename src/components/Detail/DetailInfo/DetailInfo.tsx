@@ -1,4 +1,4 @@
-import Content from '@/components/common/Content/Content';
+import Content from '@/components/@common/Content/Content';
 import { useDetailInfo } from '@/hooks/queries/detail';
 import { DetailType, DetailInfoType } from '@/types/detail';
 import * as styles from './DetailInfo.styles';

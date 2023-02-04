@@ -1,6 +1,6 @@
 import { useDetailIntro } from '@/hooks/queries/detail';
 import { DetailType, DetailIntroType } from '@/types/detail';
-import Content from '@/components/common/Content/Content';
+import Content from '@/components/@common/Content/Content';
 import * as styles from './DetailIntro.styles';
 
 function DetailIntro({ contentId, contentTypeId }: DetailType) {
