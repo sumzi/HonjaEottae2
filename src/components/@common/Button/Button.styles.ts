@@ -26,19 +26,26 @@ const variant = {
     }
   `,
   secondary: ({ colors }: Theme) => css`
-    border: 1px solid ${colors.GRAY_500};
+    border: 1px solid ${colors.GRAY_100};
     &:hover {
-      background: ${colors.GRAY_100};
+      background: ${colors.SECONDARY};
+      border: 1px solid transparent;
     }
   `,
 };
+
+const selected = ({ colors }: Theme) => css`
+  background: ${colors.PRIMARY};
+  color: ${colors.WHITE};
+  border: 1px solid transparent;
+`;
 
 const button = css`
   background: inherit;
   border: none;
   border-radius: 10px;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all 0.3s;
 `;
 
-export { button, size, variant };
+export { button, size, variant, selected };

@@ -1,9 +1,7 @@
-import { useState, useEffect, useRef, useMemo } from 'react';
 import { useDetailImage } from '@/hooks/queries/detail';
 import { DetailImageType, DetailType } from '@/types/detail';
-import * as styles from './DetailImage.styles';
-import Carousel from '@/components/common/Carousel/Carousel';
-import Content from '@/components/common/Content/Content';
+import Carousel from '@/components/@common/Carousel/Carousel';
+import Content from '@/components/@common/Content/Content';
 
 function DetailImage({ contentId }: DetailType) {
   const { data } = useDetailImage(contentId);

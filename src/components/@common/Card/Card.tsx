@@ -1,8 +1,8 @@
-import { SearchKeywordItemType } from '@/types/search';
+import { SearchItemType } from '@/types/search';
 import * as styles from './Card.styles';
 import no_image_small from '@/assets/images/no_image_small.jpg';
 
-function Card({ image, title }: SearchKeywordItemType) {
+function Card({ image, title }: SearchItemType) {
   return (
     <div css={styles.card}>
       <img

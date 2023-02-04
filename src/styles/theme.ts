@@ -4,7 +4,7 @@ const colors = {
   WHITE: '#FFFFFF',
   BLACK: '#000000',
   PRIMARY: '#FF4264',
-  SECONDARY: '#FF738C',
+  SECONDARY: '#FFABBA',
   GRAY_000: '#F4F4F4',
   GRAY_100: '#DEDEDE',
   GRAY_200: '#C8C8C8',
