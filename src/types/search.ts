@@ -2,7 +2,7 @@ export interface SearchKeywordReponse {
   keyword: string;
 }
 
-export interface SearchKeywordResponse {
+export interface SearchResponse {
   cat1: string;
   contentid: string;
   contenttypeid: string;
@@ -10,7 +10,7 @@ export interface SearchKeywordResponse {
   title: string;
 }
 
-export interface SearchKeywordItemType {
+export interface SearchItemType {
   cat1?: string;
   contentId?: string;
   contentTypeId?: string;

@@ -1,6 +1,6 @@
 import searchApi from '@/apis/search';
 import QUERY_KEY from '@/constants/queryKey';
-import { SearchKeywordResponse } from '@/types/search';
+import { SearchResponse } from '@/types/search';
 import { useQuery } from '@tanstack/react-query';
 import { AxiosResponse } from 'axios';
 
@@ -18,7 +18,7 @@ const useSearchKeyword = (keyword: string) => {
             firstimage,
             title,
             cat1,
-          }: SearchKeywordResponse) => {
+          }: SearchResponse) => {
             return {
               cat1: cat1,
               contentId: contentid,
