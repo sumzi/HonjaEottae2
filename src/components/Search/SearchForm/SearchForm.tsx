@@ -1,8 +1,8 @@
 import useFormKeyword from '@/hooks/useFormKeyword';
-import * as styles from './KeywordForm.styles';
+import * as styles from './SearchForm.styles';
 import SearchIcon from '@/assets/icons/search.svg';
 
-function KeywordForm() {
+function SearchForm() {
   const [value, handleChange, handleSubmit] = useFormKeyword('');
 
   return (
@@ -21,4 +21,4 @@ function KeywordForm() {
   );
 }
 
-export default KeywordForm;
+export default SearchForm;

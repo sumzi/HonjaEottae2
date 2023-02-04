@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import * as styles from './NavBar.styles';
 import PATH from '@/constants/path';
-import KeywordForm from '../Search/KeywordForm/KeywordForm';
+import SearchForm from '../Search/SearchForm/SearchForm';
 
 function NavBar() {
   return (
@@ -10,7 +10,7 @@ function NavBar() {
         <div css={styles.logo}>
           <Link to={PATH.MAIN.URL}>{PATH.MAIN.NAME}</Link>
         </div>
-        <KeywordForm />
+        <SearchForm />
       </div>
       <ul css={styles.menus_full}>
         <li css={styles.menu}>
