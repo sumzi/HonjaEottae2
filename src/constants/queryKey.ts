@@ -4,7 +4,9 @@ const QUERY_KEY = {
     CODE: 'code',
     LIST: 'areaList',
   },
-  COURSE: 'course',
+  COURSE: {
+    LIST: 'courseList',
+  },
   DETAIL: {
     COMMON: 'common',
     INFO: 'info',
