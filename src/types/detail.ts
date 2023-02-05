@@ -1,6 +1,7 @@
 export interface DetailType {
   contentId: string;
   contentTypeId?: string;
+  cat1?: string;
 }
 
 export interface LocationType {

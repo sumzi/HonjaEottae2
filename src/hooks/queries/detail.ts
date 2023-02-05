@@ -66,7 +66,7 @@ const useDetailInfo = ({ contentId, contentTypeId }: DetailType) => {
   );
 };
 
-const useDetailIntro = ({ contentId, contentTypeId }: DetailType) => {
+const useDetailIntro = ({ contentId, contentTypeId, cat1 }: DetailType) => {
   const result = useQueries({
     queries: [
       {
@@ -96,8 +96,10 @@ const useDetailIntro = ({ contentId, contentTypeId }: DetailType) => {
         queryKey: [QUERY_KEY.DETAIL.INFO, contentId, contentTypeId],
         queryFn: () => detailApi.getDetailInfo({ contentId, contentTypeId }),
         select: (data: AxiosResponse) => {
-          const result = data.data.response.body.items.item;
-          const items = result.map(
+          const result = data.data.response.body;
+          if (cat1 === 'C01' || !result || result.totalCount === 0) return [];
+
+          const items = result.items.item.map(
             ({ infoname, infotext }: DetailInfoResponse) => {
               return {
                 infoName: infoname,
@@ -127,8 +129,11 @@ const useDetailImage = (contentId: string) => {
     () => detailApi.getDetailImage(contentId),
     {
       select: (data: AxiosResponse) => {
-        const result = data.data.response.body.items.item;
-        const items = result.map(
+        const result = data.data.response.body;
+        if (result.totalCount === 0) {
+          return null;
+        }
+        const items = result.items.item.map(
           ({ serialnum, originimgurl }: DetailImageResponse) => {
             return {
               imageNum: serialnum,
