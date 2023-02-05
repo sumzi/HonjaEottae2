@@ -1,7 +1,6 @@
 import List from '@/components/@common/List/List';
 import Title from '@/components/@common/Title/Title';
 import useSearchKeyword from '@/hooks/queries/search';
-import * as styles from './SearchList.styles';
 
 interface SearchListProps {
   keyword: string;

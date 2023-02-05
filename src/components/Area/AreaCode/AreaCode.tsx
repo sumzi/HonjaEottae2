@@ -1,17 +1,16 @@
 import Button from '@/components/@common/Button/Button';
 import areaCodeItem from '@/utils/areaCodeItem';
-import useSelectArea from '@/hooks/useSelectArea';
-import { AreaCodeType } from '@/types/area';
+import { AreaCodeProps, AreaCodeType } from '@/types/area';
+import { useAreaCode } from '@/hooks/queries/area';
 import * as styles from './AreaCode.styles';
 
-function AreaCode() {
-  const [
-    areaCode,
-    sigunguCode,
-    sigunguCodeItem,
-    handleSelectArea,
-    handleSelectSigungu,
-  ] = useSelectArea();
+function AreaCode({
+  areaCode,
+  sigunguCode,
+  handleSelectArea,
+  handleSelectSigungu,
+}: AreaCodeProps) {
+  const { data: sigunguCodeItem } = useAreaCode(areaCode);
 
   return (
     <div>
