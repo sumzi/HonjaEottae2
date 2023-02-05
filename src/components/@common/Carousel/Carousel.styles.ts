@@ -67,12 +67,12 @@ const button = ({ colors }: Theme) => css`
 
 const left = css`
   left: 6rem;
-  padding: 2rem 2rem 2rem 1rem;
+  padding: 2rem;
 `;
 
 const right = css`
   right: 6rem;
-  padding: 2rem 1rem 2rem 2rem;
+  padding: 2rem;
 `;
 
 export { wrapper, slider, button, left, right, items };

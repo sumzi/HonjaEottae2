@@ -3,8 +3,8 @@ import { DetailType, DetailIntroType } from '@/types/detail';
 import Content from '@/components/@common/Content/Content';
 import * as styles from './DetailIntro.styles';
 
-function DetailIntro({ contentId, contentTypeId }: DetailType) {
-  const data = useDetailIntro({ contentId, contentTypeId });
+function DetailIntro({ contentId, contentTypeId, cat1 }: DetailType) {
+  const data = useDetailIntro({ contentId, contentTypeId, cat1 });
 
   if (!data) {
     return <div></div>;

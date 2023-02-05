@@ -11,6 +11,12 @@ const useSearchKeyword = (keyword: string) => {
     {
       select: (data: AxiosResponse) => {
         const result = data.data.response.body;
+        if (result.totalCount === 0) {
+          return {
+            totalCount: 0,
+            items: [],
+          };
+        }
         const items = result.items.item.map(
           ({
             contentid,

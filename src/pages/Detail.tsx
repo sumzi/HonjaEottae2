@@ -12,18 +12,22 @@ function Detail() {
   const contentTypeId = searchParams.get('contentTypeId');
   const cat1 = searchParams.get('cat1');
 
-  if (!contentId || !contentTypeId) {
+  if (!contentId || !contentTypeId || !cat1) {
     return <div></div>;
   }
 
   return (
     <Layout>
       <DetailCommon contentId={contentId} contentTypeId={contentTypeId} />
-      <DetailIntro contentId={contentId} contentTypeId={contentTypeId} />
+      <DetailIntro
+        contentId={contentId}
+        contentTypeId={contentTypeId}
+        cat1={cat1}
+      />
       {cat1 === 'C01' && (
         <DetailInfo contentId={contentId} contentTypeId={contentTypeId} />
       )}
-      <DetailImage contentId={contentId} />
+      {cat1 !== 'C01' && <DetailImage contentId={contentId} />}
     </Layout>
   );
 }
