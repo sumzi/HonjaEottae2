@@ -1,8 +1,11 @@
+const webpack = require('webpack');
 const path = require('path');
+const dotenv = require('dotenv');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const Dotenv = require('dotenv-webpack');
 
 const isDevelopment = process.env.NODE_ENV !== 'production';
+
+dotenv.config();
 
 module.exports = {
   mode: isDevelopment ? 'development' : 'production',
@@ -54,11 +57,15 @@ module.exports = {
     ],
   },
   plugins: [
-    new Dotenv(),
+    new webpack.DefinePlugin({
+      'process.env.BASE_URL': JSON.stringify(process.env.BASE_URL),
+      'process.env.SERVICE_KEY': JSON.stringify(process.env.SERVICE_KEY),
+      'process.env.KAKAO_APP_KEY': JSON.stringify(process.env.KAKAO_APP_KEY),
+    }),
     new HtmlWebpackPlugin({
       template: 'public/index.html',
       templateParameters: {
-        KAKAO_APP_KEY: process.env.REACT_APP_KAKAO_APP_KEY,
+        KAKAO_APP_KEY: process.env.KAKAO_APP_KEY,
       },
     }),
   ],
