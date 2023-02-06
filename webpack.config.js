@@ -58,7 +58,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: 'public/index.html',
       templateParameters: {
-        KAKAO_APP_KEY: process.env.KAKAO_APP_KEY,
+        KAKAO_APP_KEY: process.env.REACT_APP_KAKAO_APP_KEY,
       },
     }),
   ],
