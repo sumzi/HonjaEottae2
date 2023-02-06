@@ -1,14 +1,21 @@
 import Button from '@/components/@common/Button/Button';
 import areaCodeItem from '@/utils/areaCodeItem';
-import { AreaCodeProps, AreaCodeType } from '@/types/area';
+import { AreaCodeType } from '@/types/area';
 import { useAreaCode } from '@/hooks/queries/area';
 import * as styles from './AreaCode.styles';
+
+interface AreaCodeProps {
+  areaCode: string;
+  sigunguCode: string;
+  handleClickArea: (code: string, name: string) => void;
+  handleClickSigungu: (code: string, name: string) => void;
+}
 
 function AreaCode({
   areaCode,
   sigunguCode,
-  handleSelectArea,
-  handleSelectSigungu,
+  handleClickArea,
+  handleClickSigungu,
 }: AreaCodeProps) {
   const { data: sigunguCodeItem } = useAreaCode(areaCode);
 
@@ -20,7 +27,7 @@ function AreaCode({
           {areaCodeItem.map(({ code, name }: AreaCodeType) => (
             <div
               key={code}
-              onClick={() => handleSelectArea(code, name)}
+              onClick={() => handleClickArea(code, name)}
               css={styles.button}
             >
               <Button
@@ -41,7 +48,7 @@ function AreaCode({
             {sigunguCodeItem.map(({ code, name }: AreaCodeType) => (
               <div
                 key={code}
-                onClick={() => handleSelectSigungu(code, name)}
+                onClick={() => handleClickSigungu(code, name)}
                 css={styles.button}
               >
                 <Button
