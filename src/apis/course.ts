@@ -8,15 +8,18 @@ const courseApi = {
     sigunguCode,
     pageNo,
   }: CourseBasedListRequest) => {
-    return client.get(`/areaBasedList?serviceKey=${process.env.SERVICE_KEY}`, {
-      params: {
-        numOfRows: ITEM_SIZE,
-        cat1: 'C01',
-        areaCode,
-        sigunguCode,
-        pageNo,
+    return client.get(
+      `/areaBasedList?serviceKey=${process.env.REACT_APP_SERVICE_KEY}`,
+      {
+        params: {
+          numOfRows: ITEM_SIZE,
+          cat1: 'C01',
+          areaCode,
+          sigunguCode,
+          pageNo,
+        },
       },
-    });
+    );
   },
 };
 
