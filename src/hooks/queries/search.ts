@@ -9,6 +9,7 @@ const useSearchKeyword = (keyword: string, pageNo: number) => {
     [QUERY_KEY.KEYWORD, keyword, pageNo],
     () => searchApi.getSearchKeyword(keyword, pageNo),
     {
+      suspense: true,
       select: (data: AxiosResponse) => {
         const result = data.data.response.body;
         if (result.totalCount === 0) {
