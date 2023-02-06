@@ -18,10 +18,14 @@ const useAreaCode = (areaCode?: string) => {
   );
 };
 
-const useAreaBasedList = ({ areaCode, sigunguCode }: AreaBasedListRequest) => {
+const useAreaBasedList = ({
+  areaCode,
+  sigunguCode,
+  pageNo,
+}: AreaBasedListRequest) => {
   return useQuery(
-    [QUERY_KEY.AREA.LIST, areaCode, sigunguCode],
-    () => areaApi.getAreaBasedList({ areaCode, sigunguCode }),
+    [QUERY_KEY.AREA.LIST, areaCode, sigunguCode, pageNo],
+    () => areaApi.getAreaBasedList({ areaCode, sigunguCode, pageNo }),
     {
       select: (data: AxiosResponse) => {
         const result = data.data.response.body;

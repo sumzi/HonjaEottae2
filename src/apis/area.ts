@@ -1,3 +1,4 @@
+import { ITEM_SIZE } from '@/constants';
 import { AreaBasedListRequest } from '@/types/area';
 import client from './index';
 
@@ -10,12 +11,17 @@ const areaApi = {
       },
     });
   },
-  getAreaBasedList: ({ areaCode, sigunguCode }: AreaBasedListRequest) => {
+  getAreaBasedList: ({
+    areaCode,
+    sigunguCode,
+    pageNo,
+  }: AreaBasedListRequest) => {
     return client.get(`/areaBasedList?serviceKey=${process.env.SERVICE_KEY}`, {
       params: {
         areaCode,
         sigunguCode,
-        numOfRows: 12,
+        pageNo,
+        numOfRows: ITEM_SIZE,
       },
     });
   },

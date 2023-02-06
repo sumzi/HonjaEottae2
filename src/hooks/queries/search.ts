@@ -4,10 +4,10 @@ import { SearchResponse } from '@/types/search';
 import { useQuery } from '@tanstack/react-query';
 import { AxiosResponse } from 'axios';
 
-const useSearchKeyword = (keyword: string) => {
+const useSearchKeyword = (keyword: string, pageNo: number) => {
   return useQuery(
-    [QUERY_KEY.KEYWORD, keyword],
-    () => searchApi.getSearchKeyword(keyword),
+    [QUERY_KEY.KEYWORD, keyword, pageNo],
+    () => searchApi.getSearchKeyword(keyword, pageNo),
     {
       select: (data: AxiosResponse) => {
         const result = data.data.response.body;

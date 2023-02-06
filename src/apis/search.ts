@@ -1,9 +1,10 @@
+import { ITEM_SIZE } from '@/constants';
 import client from './index';
 
 const searchApi = {
-  getSearchKeyword: (keyword: string) => {
+  getSearchKeyword: (keyword: string, pageNo: number) => {
     return client.get(`/searchKeyword?serviceKey=${process.env.SERVICE_KEY}`, {
-      params: { keyword, numOfRows: 12 },
+      params: { keyword, pageNo, numOfRows: ITEM_SIZE },
     });
   },
 };

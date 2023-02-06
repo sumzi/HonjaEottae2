@@ -8,10 +8,11 @@ import { SearchResponse } from '@/types/search';
 const useCourseBasedList = ({
   areaCode,
   sigunguCode,
+  pageNo,
 }: CourseBasedListRequest) => {
   return useQuery(
-    [QUERY_KEY.COURSE.LIST, areaCode, sigunguCode],
-    () => courseApi.getCourseBasedList({ areaCode, sigunguCode }),
+    [QUERY_KEY.COURSE.LIST, areaCode, sigunguCode, pageNo],
+    () => courseApi.getCourseBasedList({ areaCode, sigunguCode, pageNo }),
     {
       select: (data: AxiosResponse) => {
         const result = data.data.response.body;
