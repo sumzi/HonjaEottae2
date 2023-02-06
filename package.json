@@ -16,6 +16,7 @@
     "@storybook/manager-webpack5": "^6.5.15",
     "@storybook/react": "^6.5.15",
     "@storybook/testing-library": "^0.0.13",
+    "@svgr/webpack": "^6.5.1",
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
     "@types/react-router-dom": "^5.3.3",
@@ -26,6 +27,7 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.32.1",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",
     "prettier": "^2.8.3",
     "ts-loader": "^9.4.2",
@@ -36,14 +38,16 @@
   },
   "dependencies": {
     "@emotion/react": "^11.10.5",
-    "@emotion/styled": "^11.10.5",
+    "@tanstack/react-query": "^4.23.0",
+    "axios": "^1.2.4",
+    "dotenv-webpack": "^8.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.7.0"
   },
   "scripts": {
     "start": "webpack serve --mode development",
-    "build-prod": "webpack --mode production",
+    "build": "webpack --mode production",
     "build-dev": "webpack --mode development",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
