@@ -1,7 +1,8 @@
+import { Suspense } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import Layout from '@/components/@common/Layout/Layout';
 import SearchList from '@/components/Search/SearchList/SearchList';
-import Pagination from '@/components/@common/Pagination/Pagination';
+import ListFallback from '@/components/@common/List/List.fallback';
 
 function Search() {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -22,11 +23,13 @@ function Search() {
 
   return (
     <Layout>
-      <SearchList
-        keyword={keyword}
-        pageNo={pageNo}
-        handleClickPagination={handleClickPagination}
-      />
+      <Suspense fallback={<ListFallback />}>
+        <SearchList
+          keyword={keyword}
+          pageNo={pageNo}
+          handleClickPagination={handleClickPagination}
+        />
+      </Suspense>
     </Layout>
   );
 }

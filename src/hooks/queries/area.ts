@@ -27,6 +27,7 @@ const useAreaBasedList = ({
     [QUERY_KEY.AREA.LIST, areaCode, sigunguCode, pageNo],
     () => areaApi.getAreaBasedList({ areaCode, sigunguCode, pageNo }),
     {
+      suspense: true,
       select: (data: AxiosResponse) => {
         const result = data.data.response.body;
         if (result.totalCount === 0) {

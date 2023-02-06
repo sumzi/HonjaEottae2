@@ -15,6 +15,7 @@ const useDetailCommon = ({ contentId, contentTypeId }: DetailType) => {
     [QUERY_KEY.DETAIL.COMMON, contentId, contentTypeId],
     () => detailApi.getDetailCommon({ contentId, contentTypeId }),
     {
+      suspense: true,
       select: (data: AxiosResponse) => {
         const result = data.data.response.body.items.item[0];
 
@@ -39,6 +40,7 @@ const useDetailInfo = ({ contentId, contentTypeId }: DetailType) => {
     [QUERY_KEY.DETAIL.INFO, contentId, contentTypeId],
     () => detailApi.getDetailInfo({ contentId, contentTypeId }),
     {
+      suspense: true,
       select: (data: AxiosResponse) => {
         const result = data.data.response.body.items.item;
         const items = result.map(
@@ -72,6 +74,7 @@ const useDetailIntro = ({ contentId, contentTypeId, cat1 }: DetailType) => {
       {
         queryKey: [QUERY_KEY.DETAIL.INTRO, contentId, contentTypeId],
         queryFn: () => detailApi.getDetailIntro({ contentId, contentTypeId }),
+        suspense: true,
         select: (data: AxiosResponse) => {
           const result = data.data.response.body.items.item[0];
           const items = [];
@@ -95,6 +98,7 @@ const useDetailIntro = ({ contentId, contentTypeId, cat1 }: DetailType) => {
       {
         queryKey: [QUERY_KEY.DETAIL.INFO, contentId, contentTypeId],
         queryFn: () => detailApi.getDetailInfo({ contentId, contentTypeId }),
+        suspense: true,
         select: (data: AxiosResponse) => {
           const result = data.data.response.body;
           if (cat1 === 'C01' || !result || result.totalCount === 0) return [];

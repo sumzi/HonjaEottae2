@@ -14,6 +14,7 @@ const useCourseBasedList = ({
     [QUERY_KEY.COURSE.LIST, areaCode, sigunguCode, pageNo],
     () => courseApi.getCourseBasedList({ areaCode, sigunguCode, pageNo }),
     {
+      suspense: true,
       select: (data: AxiosResponse) => {
         const result = data.data.response.body;
         if (result.totalCount === 0) {
