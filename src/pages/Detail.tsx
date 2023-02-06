@@ -4,6 +4,11 @@ import DetailCommon from '@/components/Detail/DetailCommon/DetailCommon';
 import DetailIntro from '@/components/Detail/DetailIntro/DetailIntro';
 import DetailImage from '@/components/Detail/DetailImage/DetailImage';
 import DetailInfo from '@/components/Detail/DetailInfo/DetailInfo';
+import DetailCommonFallback from '@/components/Detail/DetailCommon/DetailCommon.fallback';
+import { Suspense } from 'react';
+import DetailIntroFallback from '@/components/Detail/DetailIntro/DetailIntro.fallback';
+import DetailImageFallback from '@/components/Detail/DetailImage/DetailImage.fallback';
+import DetailInfoFallback from '@/components/Detail/DetailInfo/DetailInfo.fallback';
 
 function Detail() {
   const [searchParams] = useSearchParams();
@@ -18,16 +23,28 @@ function Detail() {
 
   return (
     <Layout>
-      <DetailCommon contentId={contentId} contentTypeId={contentTypeId} />
-      <DetailIntro
-        contentId={contentId}
-        contentTypeId={contentTypeId}
-        cat1={cat1}
-      />
+      <Suspense fallback={<DetailCommonFallback />}>
+        <DetailCommon contentId={contentId} contentTypeId={contentTypeId} />
+      </Suspense>
+
+      <Suspense fallback={<DetailIntroFallback />}>
+        <DetailIntro
+          contentId={contentId}
+          contentTypeId={contentTypeId}
+          cat1={cat1}
+        />
+      </Suspense>
+
       {cat1 === 'C01' && (
-        <DetailInfo contentId={contentId} contentTypeId={contentTypeId} />
+        <Suspense fallback={<DetailInfoFallback />}>
+          <DetailInfo contentId={contentId} contentTypeId={contentTypeId} />
+        </Suspense>
       )}
-      {cat1 !== 'C01' && <DetailImage contentId={contentId} />}
+      {cat1 !== 'C01' && (
+        <Suspense fallback={<DetailImageFallback />}>
+          <DetailImage contentId={contentId} />
+        </Suspense>
+      )}
     </Layout>
   );
 }

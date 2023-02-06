@@ -1,4 +1,6 @@
+import { Suspense } from 'react';
 import Layout from '@/components/@common/Layout/Layout';
+import ListFallback from '@/components/@common/List/List.fallback';
 import AreaCode from '@/components/Area/AreaCode/AreaCode';
 import CourseList from '@/components/Course/CourseList/CourseList';
 import useSearchArea from '@/hooks/useSearchArea';
@@ -22,13 +24,15 @@ function Course() {
         handleClickArea={handleClickArea}
         handleClickSigungu={handleClickSigungu}
       />
-      <CourseList
-        areaCode={areaCode}
-        sigunguCode={sigunguCode}
-        pageNo={pageNo}
-        title={title}
-        handleClickPagination={handleClickPagination}
-      />
+      <Suspense fallback={<ListFallback />}>
+        <CourseList
+          areaCode={areaCode}
+          sigunguCode={sigunguCode}
+          pageNo={pageNo}
+          title={title}
+          handleClickPagination={handleClickPagination}
+        />
+      </Suspense>
     </Layout>
   );
 }
