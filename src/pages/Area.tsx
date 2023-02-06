@@ -1,4 +1,3 @@
-import { useSearchParams } from 'react-router-dom';
 import AreaCode from '@/components/Area/AreaCode/AreaCode';
 import AreaList from '@/components/Area/AreaList/AreaList';
 import Layout from '@/components/@common/Layout/Layout';
