@@ -32,13 +32,8 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(ts|tsx)$/,
-        use: {
-          loader: 'ts-loader',
-          options: {
-            configFile: path.resolve(__dirname, 'tsconfig.json'),
-          },
-        },
+        test: /\.(tsx|ts)$/,
+        use: ['babel-loader', 'ts-loader'],
         exclude: /node_modules/,
       },
       {
