@@ -1,18 +1,20 @@
+import { lazy, Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Main from '@/pages/Main';
-import Search from '@/pages/Search';
-import Detail from '@/pages/Detail';
-import Area from '@/pages/Area';
 import NotFound from '@/pages/NotFound';
-import Course from '@/pages/Course';
-import Location from '@/pages/Location';
 import NavBar from '@/components/NavBar/NavBar';
 import Footer from '@/components/@common/Footer/Footer';
 import PATH from '@/constants/path';
 
+const Search = lazy(() => import('@/pages/Search'));
+const Detail = lazy(() => import('@/pages/Detail'));
+const Area = lazy(() => import('@/pages/Area'));
+const Course = lazy(() => import('@/pages/Course'));
+const Location = lazy(() => import('@/pages/Location'));
+
 function App() {
   return (
-    <>
+    <Suspense fallback={<></>}>
       <NavBar />
       <Routes>
         <Route path={PATH.MAIN.URL} element={<Main />} />
@@ -24,7 +26,7 @@ function App() {
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
-    </>
+    </Suspense>
   );
 }
 
