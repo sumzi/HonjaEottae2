@@ -2,6 +2,8 @@ const webpack = require('webpack');
 const path = require('path');
 const dotenv = require('dotenv');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const BundleAnalyzerPlugin =
+  require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const isDevelopment = process.env.NODE_ENV !== 'production';
 
@@ -62,6 +64,9 @@ module.exports = {
       templateParameters: {
         KAKAO_APP_KEY: process.env.KAKAO_APP_KEY,
       },
+    }),
+    new BundleAnalyzerPlugin({
+      analyzerMode: isDevelopment ? 'server' : 'static',
     }),
   ],
 };
