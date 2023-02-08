@@ -21,9 +21,9 @@ function Error() {
     <Layout>
       <div css={wrapper}>
         <p>에러가 발생했습니다. 잠시 후에 다시 시도해주세요.</p>
-        <Link to={PATH.MAIN.URL}>
+        <a href={PATH.MAIN.URL}>
           <Button>혼자어때 페이지로 돌아가기</Button>
-        </Link>
+        </a>
       </div>
     </Layout>
   );
