@@ -25,8 +25,8 @@ const useDetailCommon = ({ contentId, contentTypeId }: DetailType) => {
           contentId: result.contentid,
           contentTypeId: result.contenttypeid,
           image: result.firstimage,
-          mapX: Number(result.mapx),
-          mapY: Number(result.mapy),
+          mapX: Number(result.mapy),
+          mapY: Number(result.mapx),
           overview: result.overview,
           title: result.title,
         };

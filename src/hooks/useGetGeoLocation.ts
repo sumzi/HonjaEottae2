@@ -6,7 +6,10 @@ interface GeoLocationType {
 }
 
 function useGetGeoLocation(): [typeof geoLocation, () => void] {
-  const [geoLocation, setGeoLocation] = useState<GeoLocationType>();
+  const [geoLocation, setGeoLocation] = useState<GeoLocationType>({
+    lat: '',
+    lng: '',
+  });
 
   const refreshGeoLocation = useCallback(() => {
     if (navigator.geolocation) {
