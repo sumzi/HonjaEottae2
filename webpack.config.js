@@ -66,7 +66,7 @@ module.exports = {
       },
     }),
     new BundleAnalyzerPlugin({
-      analyzerMode: isDevelopment ? 'server' : 'static',
+      analyzerMode: 'disabled',
     }),
   ],
 };
