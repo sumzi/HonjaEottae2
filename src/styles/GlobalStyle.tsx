@@ -25,6 +25,11 @@ const global = ({ colors, sizes }: Theme) => css`
     text-decoration: none;
     color: inherit;
   }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
 `;
 
 function GlobalStyle() {
