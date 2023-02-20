@@ -37,8 +37,6 @@ const menus_full = ({ flex, sizes }: Theme) => css`
     margin-left: 10rem;
   }
   justify-content: space-between;
-  list-style-type: none;
-  padding: 0;
 `;
 
 const menus_small = ({ sizes }: Theme) => css`
@@ -49,11 +47,52 @@ const menus_small = ({ sizes }: Theme) => css`
 `;
 
 const menu = ({ colors }: Theme) => css`
+  cursor: pointer;
   font-size: 4rem;
+  color: ${colors.GRAY_400};
+  fill: ${colors.GRAY_400};
+  transition: all 0.2s;
+  &:hover {
+    color: ${colors.GRAY_800};
+    fill: ${colors.GRAY_800};
+  }
+`;
+
+const drawer_li = ({ colors }: Theme) => css`
+  margin: 4rem 0;
+  padding: 2rem;
+  font-size: 4.5rem;
+  text-align: center;
+  transition: all 0.2s;
   color: ${colors.GRAY_400};
   &:hover {
     color: ${colors.GRAY_800};
   }
 `;
 
-export { navbar, wrapper, logo, menus_full, menu, menus_small };
+const close = ({ colors }: Theme) => css`
+  text-align: center;
+  & > div {
+    display: inline-block;
+  }
+  svg {
+    width: 8rem;
+    transition: all 0.2s;
+    cursor: pointer;
+    fill: ${colors.GRAY_400};
+    &:hover {
+      fill: ${colors.GRAY_800};
+    }
+  }
+`;
+
+export {
+  navbar,
+  wrapper,
+  logo,
+  menus_full,
+  menu,
+  menus_small,
+  drawer_li,
+  close,
+};
