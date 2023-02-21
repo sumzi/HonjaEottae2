@@ -13,4 +13,8 @@ const wrapper = ({ flex }: Theme) => css`
   flex-wrap: wrap;
 `;
 
-export { text, wrapper };
+const target = css`
+  height: 5rem;
+`;
+
+export { text, wrapper, target };
