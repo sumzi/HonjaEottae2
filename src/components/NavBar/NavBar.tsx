@@ -8,7 +8,7 @@ import MenuIcon from '@/assets/icons/menu.svg';
 import CloseIcon from '@/assets/icons/close.svg';
 
 function NavBar() {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
 
   const handleDrawerClose = () => {
     setOpen(false);

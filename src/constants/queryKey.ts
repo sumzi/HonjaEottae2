@@ -13,6 +13,9 @@ const QUERY_KEY = {
     INTRO: 'intro',
     IMAGE: 'image',
   },
+  LOCATION: {
+    LIST: 'locationList',
+  },
 };
 
 export default QUERY_KEY;

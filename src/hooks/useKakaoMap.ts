@@ -1,6 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { LocationType } from '@/types/detail';
-import { KaKaoMapType, LocationBasedListType } from '@/types/location';
+import { KaKaoMapType } from '@/types/location';
 
 declare global {
   interface Window {
@@ -43,7 +42,7 @@ const useKakaoMap = ({ mapX, mapY, data }: KaKaoMapType) => {
       });
       marker.setMap(map);
     }
-  }, []);
+  }, [data]);
 
   return { container };
 };
