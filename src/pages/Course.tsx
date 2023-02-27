@@ -1,4 +1,4 @@
-import { Suspense } from 'react';
+import { Suspense, useEffect } from 'react';
 import Layout from '@/components/@common/Layout/Layout';
 import ListFallback from '@/components/@common/List/List.fallback';
 import AreaCode from '@/components/Area/AreaCode/AreaCode';
@@ -15,6 +15,10 @@ function Course() {
     handleClickSigungu,
     handleClickPagination,
   ] = useSearchArea();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pageNo]);
 
   return (
     <Layout>
