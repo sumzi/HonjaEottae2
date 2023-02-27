@@ -1,8 +1,7 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import * as styles from './Carousel.styles';
 import ArrowLeftIcon from '@/assets/icons/arrow_left.svg';
 import ArrowRightIcon from '@/assets/icons/arrow_right.svg';
-import { css } from '@emotion/react';
 
 interface CarouselProps {
   children: React.ReactNode;

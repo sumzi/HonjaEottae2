@@ -14,19 +14,21 @@ const Location = lazy(() => import('@/pages/Location'));
 
 function App() {
   return (
-    <Suspense fallback={<></>}>
+    <>
       <NavBar />
-      <Routes>
-        <Route path={PATH.MAIN.URL} element={<Main />} />
-        <Route path={PATH.SEARCH.URL} element={<Search />} />
-        <Route path={PATH.DETAIL.URL} element={<Detail />} />
-        <Route path={PATH.AREA.URL} element={<Area />} />
-        <Route path={PATH.COURSE.URL} element={<Course />} />
-        <Route path={PATH.LOCATION.URL} element={<Location />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-      <Footer />
-    </Suspense>
+      <Suspense>
+        <Routes>
+          <Route path={PATH.MAIN.URL} element={<Main />} />
+          <Route path={PATH.SEARCH.URL} element={<Search />} />
+          <Route path={PATH.DETAIL.URL} element={<Detail />} />
+          <Route path={PATH.AREA.URL} element={<Area />} />
+          <Route path={PATH.COURSE.URL} element={<Course />} />
+          <Route path={PATH.LOCATION.URL} element={<Location />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+        <Footer />
+      </Suspense>
+    </>
   );
 }
 

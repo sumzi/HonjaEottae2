@@ -1,4 +1,4 @@
-import { ComponentMeta, ComponentStory, Story } from '@storybook/react';
+import { Story } from '@storybook/react';
 
 import Empty from './Empty';
 

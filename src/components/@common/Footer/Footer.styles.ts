@@ -4,9 +4,8 @@ const footer = ({ colors, flex }: Theme) => css`
   ${flex.column}
   margin-top: 5rem;
   height: 25rem;
-  background: ${colors.GRAY_000};
   color: ${colors.GRAY_700};
-  line-height: 80%;
+  font-size: 2.8rem;
 `;
 
 export { footer };
