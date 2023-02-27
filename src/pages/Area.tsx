@@ -1,4 +1,4 @@
-import { Suspense, useEffect, useLayoutEffect } from 'react';
+import { Suspense, useEffect } from 'react';
 import AreaCode from '@/components/Area/AreaCode/AreaCode';
 import AreaList from '@/components/Area/AreaList/AreaList';
 import Layout from '@/components/@common/Layout/Layout';

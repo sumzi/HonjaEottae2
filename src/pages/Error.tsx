@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import { css, Theme } from '@emotion/react';
 import Button from '@/components/@common/Button/Button';
 import Layout from '@/components/@common/Layout/Layout';

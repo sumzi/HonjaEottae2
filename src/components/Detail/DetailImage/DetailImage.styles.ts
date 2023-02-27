@@ -7,7 +7,7 @@ const wrapper = ({ flex }: Theme) => css`
   }
 `;
 
-const imageBox = ({ flex }: Theme) => css`
+const imageBox = css`
   background: coral;
   width: 350px;
   height: 250px;

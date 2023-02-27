@@ -1,4 +1,4 @@
-import { css, Theme } from '@emotion/react';
+import { css } from '@emotion/react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import theme from './theme';
 
