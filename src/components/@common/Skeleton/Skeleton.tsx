@@ -16,11 +16,25 @@ function Skeleton({
   return (
     <div
       css={({ colors }: Theme) => css`
+        @keyframes pulse {
+          0% {
+            background-color: ${colors.GRAY_100};
+          }
+
+          50% {
+            background-color: ${colors.GRAY_000};
+          }
+
+          100% {
+            background-color: ${colors.GRAY_100};
+          }
+        }
         margin-bottom: ${marginBottom};
         width: ${width};
         height: ${height};
-        background: ${colors.GRAY_000};
+        /* background: ${colors.GRAY_000}; */
         border-radius: ${circle ? '50%' : '10px'};
+        animation: pulse 2s infinite ease-in-out;
       `}
     />
   );
