@@ -33,9 +33,12 @@ function useSearchArea(): [
     [areaCode, title],
   );
 
-  const handleClickPagination = useCallback((no: number) => {
-    setSearchParams({ areaCode, sigunguCode, title, pageNo: String(no) });
-  }, []);
+  const handleClickPagination = useCallback(
+    (no: number) => {
+      setSearchParams({ areaCode, sigunguCode, title, pageNo: String(no) });
+    },
+    [areaCode, sigunguCode, title],
+  );
 
   return [
     areaCode,

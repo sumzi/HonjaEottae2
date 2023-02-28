@@ -1,4 +1,0 @@
-[[redirects]]
-  from = "/*"
-  to = "/indexgit.html"
-  status = 200

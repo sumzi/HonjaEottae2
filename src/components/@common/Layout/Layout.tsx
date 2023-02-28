@@ -1,4 +1,3 @@
-import { HTMLAttributes } from 'react';
 import * as styles from './Layout.styles';
 
 interface LayoutProps {

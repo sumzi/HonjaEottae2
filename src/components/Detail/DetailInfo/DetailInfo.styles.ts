@@ -9,7 +9,7 @@ const wrapper = ({ sizes }: Theme) => css`
   }
 `;
 
-const line = ({ flex, sizes, colors }: Theme) => css`
+const line = ({ sizes, colors }: Theme) => css`
   position: absolute;
   top: 0;
   bottom: 0;
@@ -38,7 +38,7 @@ const image = ({ sizes, colors }: Theme) => css`
   }
 `;
 
-const content = ({ colors, flex, sizes }: Theme) => css`
+const content = ({ colors }: Theme) => css`
   display: inline-block;
   flex: 1;
   padding: 8rem;
