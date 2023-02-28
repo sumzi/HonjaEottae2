@@ -1,8 +1,9 @@
 name: 혼자어때 AWS S3 Bucket Deploy
 
 on:
-	push:
-		- main
+  push:
+    branches:
+      - main
 	
 jobs:
   build:
