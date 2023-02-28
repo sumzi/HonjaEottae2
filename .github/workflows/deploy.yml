@@ -1,0 +1,30 @@
+name: 혼자어때 AWS S3 Bucket Deploy
+
+on:
+	push:
+		- main
+	
+jobs:
+  build:
+    name: test deploy
+    runs-on: ubuntu-latest
+
+    steps:
+	    - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: yarn
+
+      - name: Install
+        run: yarn
+
+      - name: Build
+        run: yarn build
+
+      - name: Upload
+        run: aws s3 sync ./build s3://honjaeottae
+        env:
+          AWS_ACCESS_KEY_ID: ${{secrets.AWS_ACCESS_KEY_ID}}
+          AWS_SECRET_ACCESS_KEY: ${{secrets.AWS_SECRET_ACCESS_KEY}}
+          AWS_REGION: ap-northeast-2
